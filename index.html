@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Test : test">
 	
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="angularApp.js"></script>
 	<script type="text/javascript" src="main.js"></script>
-	    <title>Aquarius</title>
+	<title>Aquarius</title>
   </head>
 
   <body>
   <h1>What are you interested in?</h1>
-  <div class="bigtopics"><span>HUMANITIES</span><span>NATURAL SCIENCES</span><span>TECHNOLOGY</span><span>MATH</span><span>ENGINEERING</span><span>ARTS</span></div>
-  <h1>Select a topic:</h1>
-  <div class="smalltopics">
+  <div class="bigtopics1"><span class="bigtopics" id="link1">HUMANITIES</span><span class="bigtopics" id="link2">SCIENCES</span><span class="bigtopics" id="link3">TECHNOLOGY</span><span class="bigtopics" id="link4">MATH</span><span class="bigtopics" id="link5">ENGINEERING</span><span class="bigtopics" id="link6">ARTS</span></div>
+  <div class="smalltopics" ng-controller="PlayerController">
+  <h1>Select a topic, {{ name }}:</h1>
 	  <ul class="dropdown">
 			<li>I'm hidden!</li>
 			<li>Me too!</li>
