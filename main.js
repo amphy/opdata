@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 // Handler for .ready() called.
-
+	
+	var prevId;
+	
 	$(".bigtopics1").fadeIn("slow");
 
 	$(".bigtopics").mouseover(function() {
@@ -76,13 +78,20 @@ $( document ).ready(function() {
 				});
 	}
 	
-	$(".bigtopics").click(function() {
+	$(".bigtopics").on("click", function() {
+		mouseOut(prevId);
+		$(".bigtopics").on("mouseout", function() {
+			var id = this.id;
+			mouseOut(id);
+		});
 		/*$(".smalltopics").css({
 			display : "inline"
 			});*/
 		$(".smalltopics").hide();
 		$(".smalltopics").fadeIn("slow");
-		var x = this.id;
+		var id = this.id;
+		$("#" + id).off("mouseout");
+		prevId = this.id;
 	});
 	
 });
